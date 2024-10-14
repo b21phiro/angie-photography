@@ -6,11 +6,16 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class App {
 
-    public function __construct() {}
+    protected Router $router;
+
+    public function __construct()
+    {
+        $this->router = new Router();
+    }
 
     public function run(ServerRequestInterface $request): void
     {
-        var_dump($request->getUri()->getPath());
+        $this->router->handler($request);
     }
 
 }
