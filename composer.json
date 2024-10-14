@@ -1,0 +1,16 @@
+{
+    "name": "phro/web",
+    "description": "Portfolio for Angie Gray",
+    "autoload": {
+        "psr-4": {
+            "Phro\\Web\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "b21phiro",
+            "email": "philip.rosenqvist@outlook.com"
+        }
+    ],
+    "require": {}
+}
