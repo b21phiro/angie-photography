@@ -1,14 +1,24 @@
 <?php
 
+use Phro\Web\Controller\AdminController;
+use Phro\Web\Controller\ApiController;
+use Phro\Web\Controller\LoginController;
+use Phro\Web\Controller\WebController;
+use Phro\Web\Core\Route;
+
 $this->routes = [
 
     // API
-    new \Phro\Web\Core\Route("GET", "/api", [\Phro\Web\Controller\ApiController::class, 'helloWorld']),
+    new Route("GET", "/api", [ApiController::class, 'helloWorld'])
 
     // Admin
-    new \Phro\Web\Core\Route("GET", "/admin", [\Phro\Web\Controller\AdminController::class, 'dashboard']),
+    , new Route("GET", "/admin", [AdminController::class, 'dashboard'])
+
+    // Login
+    , new Route("GET", "/login", [LoginController::class, 'login'])
+    , new Route("POST", "/login/authenticate", [LoginController::class, 'authenticate'])
 
     // Web
-    new \Phro\Web\Core\Route("GET", "/(.*)", [\Phro\Web\Controller\WebController::class, 'sendHtmlFile'])
+    , new Route("GET", "/(.*)", [WebController::class, 'sendHtmlFile'])
 
 ];

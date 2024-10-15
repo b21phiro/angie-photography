@@ -33,7 +33,7 @@ class Route
 
         return preg_match
         (
-            '/'.$this->path.'/',
+            $this->path,
             $request->getUri()->getPath()
         );
 
@@ -41,7 +41,7 @@ class Route
 
     private function setPathPattern(string $path): void
     {
-        $this->path = "^\\".$path."$";
+        $this->path = '/^'.preg_quote($path, '/').'/';
     }
 
     /**
