@@ -9,7 +9,9 @@ use Phro\Web\Core\Route;
 $this->routes = [
 
     // API
-    new Route("GET", "/api", [ApiController::class, 'helloWorld'])
+      new Route("GET", "/api", [ApiController::class, 'helloWorld'])
+    , new Route("POST", "/api/user", [ApiController::class, 'createUser'])
+    , new Route("DELETE", "/api/user", [ApiController::class, 'deleteUser'])
 
     // Admin
     , new Route("GET", "/admin", [AdminController::class, 'dashboard'])

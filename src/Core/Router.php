@@ -2,7 +2,6 @@
 
 namespace Phro\Web\Core;
 
-use JetBrains\PhpStorm\NoReturn;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Router

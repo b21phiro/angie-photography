@@ -1,4 +1,4 @@
-<form method="POST" action="login/authenticate">
+<form method="POST" action="<?= \Phro\Web\Config\Env::BaseRoute() ?>/login/authenticate">
 
     <h1>Log in</h1>
 
