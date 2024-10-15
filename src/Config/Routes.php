@@ -19,6 +19,6 @@ $this->routes = [
     , new Route("POST", "/login/authenticate", [LoginController::class, 'authenticate'])
 
     // Web
-    , new Route("GET", "/(.*)", [WebController::class, 'sendHtmlFile'])
+    , new Route("GET", "/", [WebController::class, 'sendHtmlFile'])
 
 ];
