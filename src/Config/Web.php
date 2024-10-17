@@ -3,6 +3,7 @@
 namespace Phro\Web\Config;
 
 use HttpSoft\Router\RouteCollector;
+use Phro\Web\Controller\AdminController;
 use Phro\Web\Controller\ApiController;
 use Phro\Web\Controller\WebController;
 use Phro\Web\Factory\ControllerFactory;
@@ -26,3 +27,9 @@ $router->get(
 );
 
 // Admin Routes
+$router->get
+(
+    "admin",
+    "/admin",
+    ControllerFactory::create(AdminController::class, "dashboard")
+);
