@@ -10,7 +10,7 @@ class ViewResponse extends Response
     /**
      * @throws ViewResponseException
      */
-    public function __construct(string $path, int $status = 200)
+    public function __construct(string $path, array $bag = [], int $status = 200)
     {
 
         $filepath = __DIR__ . '/../View/'.$path;
@@ -20,8 +20,10 @@ class ViewResponse extends Response
             throw new ViewResponseException();
         }
 
+        extract($bag);
+
         ob_start();
-        include $filepath;
+        include __DIR__ . '/../View/_template.php';
         $body = ob_get_clean();
 
         parent::__construct($status, [], $body);
