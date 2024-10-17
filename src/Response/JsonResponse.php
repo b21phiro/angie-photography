@@ -4,17 +4,13 @@ namespace Phro\Web\Response;
 
 use GuzzleHttp\Psr7\Response;
 
-class RedirectResponse extends Response
+class JsonResponse extends Response
 {
-    public function __construct(string $path)
+    public function __construct(int $status, array $body, array $headers = [])
     {
-        parent::__construct
-        (
-            302,
-            [
-                "Location" => $path
-            ],
-        );
+        $json = json_encode($body);
+        $headers["Content-Type"] = "application/json";
+        parent::__construct($status, $headers, $json);
     }
 
 }

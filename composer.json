@@ -13,8 +13,8 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.6",
+        "guzzlehttp/psr7": "^2.7",
         "httpsoft/http-router": "^1.1",
-        "httpsoft/http-message": "^1.1",
-        "httpsoft/http-runner": "^1.1"
+        "httpsoft/http-emitter": "^1.1"
     }
 }

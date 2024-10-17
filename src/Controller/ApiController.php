@@ -4,19 +4,17 @@ namespace Phro\Web\Controller;
 
 use Phro\Web\Exception\HtmlResponseException;
 use Phro\Web\Response\HtmlResponse;
+use Phro\Web\Response\JsonResponse;
 
-class WebController extends Controller
+class ApiController extends Controller
 {
     public function __construct()
     {
     }
 
-    /**
-     * @throws HtmlResponseException
-     */
-    public function htmlResponseAction(): HtmlResponse
+    public function hello(): JsonResponse
     {
-        return new HtmlResponse(__DIR__."/../../public/index.html");
+        return new JsonResponse(200, ['message' => 'Hello world!']);
     }
 
 }
