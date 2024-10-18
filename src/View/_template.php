@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= \Phro\Web\Config\Env::Lang() ?>">
     <head>
         <meta charset="UTF-8">
-        <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="public/android-chrome-192x192.png">
-        <link rel="icon" type="image/png" sizes="512x512" href="public/android-chrome-512x512.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
-        <link rel="icon" type="image/x-icon" href="public/favicon.ico">
-        <link rel="manifest" href="public/site.webmanifest.json">
-        <title>Angie Gray Admin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?= ($title ?? "") ?>Angie Gray Admin</title>
+        <?php include __DIR__ . "/_includes/stylesheet.php"; ?>
+        <?php include __DIR__ . "/_includes/favicon.php"; ?>
     </head>
     <body>
         <?php
@@ -18,5 +14,6 @@
                 include $filepath;
             }
         ?>
+        <?php include __DIR__ . "/_includes/scripts.php"; ?>
     </body>
 </html>

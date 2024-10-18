@@ -18,4 +18,9 @@ class AdminController extends Controller
         return new ViewResponse("admin/dashboard.php");
     }
 
+    public function login(): ViewResponse
+    {
+        return new ViewResponse("admin/login.php");
+    }
+
 }

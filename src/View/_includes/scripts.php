@@ -1,0 +1,1 @@
+<script type="module" src="public/admin/main.js"></script>

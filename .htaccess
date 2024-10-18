@@ -1,5 +1,4 @@
 RewriteEngine On
-
 RewriteBase /angie-photography/
 
 RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]

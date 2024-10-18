@@ -8,4 +8,9 @@ class Env
     {
         return $_ENV['WEBSITE_BASE_ROUTE'] ?? "";
     }
+
+    public static function Lang(): string
+    {
+        return $_ENV['ADMIN_LANG'] ?? "en";
+    }
 }
