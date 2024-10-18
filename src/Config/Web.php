@@ -45,6 +45,13 @@ try
         ControllerFactory::create(AdminController::class, "login")
     );
 
+    $router->post
+    (
+        "admin.authenticate",
+        "/admin/login",
+        ControllerFactory::create(AdminController::class, "authenticate")
+    );
+
 } catch (ControllerFactoryException $exception)
 {
     echo "<h1>Error {$exception->getCode()}</h1>";
