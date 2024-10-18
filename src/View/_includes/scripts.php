@@ -1,1 +1,0 @@
-<script type="module" src="<?= \Phro\Web\Config\Env::BaseRoute() ?>/public/admin/main.js"></script>
